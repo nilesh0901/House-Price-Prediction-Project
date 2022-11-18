@@ -19,7 +19,7 @@ def predict_home_price():
     bath = int(request.form['bath'])
 
     response = jsonify({'Estimated_price': util.get_estimated_price(location, total_sqft, bhk, bath)})
-
+    response.headers.add('Access-Control-Allow-Origin', '*')
     return response
 
 

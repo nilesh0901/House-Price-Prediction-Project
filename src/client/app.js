@@ -35,8 +35,9 @@ function onClickedEstimatePrice() {
       bath: bathrooms,
       location: location.value
   },function(data, status) {
-      console.log(data.estimated_price);
-      estPrice.innerHTML = "<h2>" + data.estimated_price.toString() + " Lakh</h2>";
+      console.log(data);
+      data.Estimated_price = data.Estimated_price.toFixed(2);
+      estPrice.innerHTML = "<h2>" + data.Estimated_price.toString() + " Lakh</h2>";
       console.log(status);
   });
 }
